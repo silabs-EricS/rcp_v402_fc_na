@@ -433,7 +433,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.link.option.other.1555795784" superClass="gnu.c.link.option.other" useByScannerDiscovery="false" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.link.option.other.1555795784" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" useByScannerDiscovery="false" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="--wrap=RAIL_GetRxPacketInfo"/>
                                     								
