@@ -24,11 +24,13 @@ gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG21/Source \
 gecko_sdk_4.0.2/platform/bootloader/api \
 gecko_sdk_4.0.2/platform/bootloader/app_properties \
 gecko_sdk_4.0.2/platform/common/toolchain/src \
+gecko_sdk_4.0.2/platform/driver/button/src \
 gecko_sdk_4.0.2/platform/emdrv/dmadrv/src \
 gecko_sdk_4.0.2/platform/emdrv/gpiointerrupt/src \
 gecko_sdk_4.0.2/platform/emdrv/uartdrv/src \
 gecko_sdk_4.0.2/platform/emlib/src \
 gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/pa-conversions \
+gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/rail_util_pti \
 gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/rail_util_rf_path \
 gecko_sdk_4.0.2/platform/service/device_init/src \
 gecko_sdk_4.0.2/platform/service/system/src \

@@ -25,6 +25,8 @@ component:
 - instance: [vcom]
   id: uartdrv_usart
 - {id: sl_system}
+- instance: [btn0]
+  id: simple_button
 - {id: bluetooth_controller}
 - {id: bluetooth_feature_connection}
 - {id: brd4001a}
@@ -33,6 +35,7 @@ component:
 - {id: bluetooth_feature_extended_advertiser}
 - {id: device_init}
 - {id: bootloader_interface}
+- {id: rail_util_pti}
 - {id: EFR32MG21A010F1024IM32}
 other_file:
 - {path: readme_img0.png}

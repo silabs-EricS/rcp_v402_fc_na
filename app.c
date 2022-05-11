@@ -29,6 +29,41 @@
  ******************************************************************************/
 #include "em_common.h"
 
+#include "sl_simple_button.h"
+#include "rail.h"
+
+bool enable = true;
+
+extern RAIL_RxPacketHandle_t __real_RAIL_GetRxPacketInfo(RAIL_Handle_t railHandle,
+                                                         RAIL_RxPacketHandle_t packetHandle,
+                                                         RAIL_RxPacketInfo_t *pPacketInfo);
+
+RAIL_RxPacketHandle_t __wrap_RAIL_GetRxPacketInfo(RAIL_Handle_t railHandle,
+                                           RAIL_RxPacketHandle_t packetHandle,
+                                           RAIL_RxPacketInfo_t *pPacketInfo)
+{
+  RAIL_RxPacketHandle_t handle = __real_RAIL_GetRxPacketInfo(railHandle,
+                                                   packetHandle,
+                                                   pPacketInfo);
+  if (enable == false){
+      pPacketInfo->packetStatus = RAIL_RX_PACKET_READY_CRC_ERROR;
+  }
+  return handle;
+}
+
+void sl_button_on_change  ( const sl_button_t *   handle  )
+{
+  if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_PRESSED){
+    enable = false;
+  } else {
+    enable = true;
+  }
+}
+
+void sl_set_rx_enable(bool en)
+{
+  enable = en;
+}
 /***************************************************************************//**
  * Application Init.
  ******************************************************************************/

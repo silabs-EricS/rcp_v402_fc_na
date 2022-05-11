@@ -9,11 +9,13 @@
 #include "sl_device_init_clocks.h"
 #include "sl_device_init_emu.h"
 #include "pa_conversions_efr32.h"
+#include "sl_rail_util_pti.h"
 #include "sl_rail_util_rf_path.h"
 #include "sl_board_control.h"
 #include "sl_btctrl_linklayer.h"
 #include "gpiointerrupt.h"
 #include "sl_mbedtls.h"
+#include "sl_simple_button_instances.h"
 #include "sl_uartdrv_instances.h"
 #include "sl_btctrl_hci_packet.h"
 #include "sl_hci_common_transport.h"
@@ -35,6 +37,7 @@ void sl_platform_init(void)
 void sl_driver_init(void)
 {
   GPIOINT_Init();
+  sl_simple_button_init_instances();
   sl_uartdrv_init_instances();
 }
 
@@ -47,6 +50,7 @@ void sl_service_init(void)
 void sl_stack_init(void)
 {
   sl_rail_util_pa_init();
+  sl_rail_util_pti_init();
   sl_rail_util_rf_path_init();
   sl_bt_controller_init();
 }

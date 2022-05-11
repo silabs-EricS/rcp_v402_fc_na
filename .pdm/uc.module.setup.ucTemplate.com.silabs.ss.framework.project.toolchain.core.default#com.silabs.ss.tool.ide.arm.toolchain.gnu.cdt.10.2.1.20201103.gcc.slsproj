@@ -12,6 +12,8 @@
     <file name="mbedtls_config_autogen.h" builtin="true" generated="true"/>
     <file name="sl_mbedtls_config_transform_autogen.h" builtin="true" generated="true"/>
     <file name="psa_crypto_config_autogen.h" builtin="true" generated="true"/>
+    <file name="sl_simple_button_instances.c" builtin="true" generated="true"/>
+    <file name="sl_simple_button_instances.h" builtin="true" generated="true"/>
     <file name="linkerfile.ld" builtin="true" generated="true"/>
     <file name="sl_uartdrv_init.c" builtin="true" generated="true"/>
     <file name="sl_uartdrv_instances.h" builtin="true" generated="true"/>

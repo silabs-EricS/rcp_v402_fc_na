@@ -79,6 +79,18 @@
           <file name="btl_reset_info.h" linked="false" uri="studio:/sdk/platform/bootloader/api/btl_reset_info.h"/>
         </folder>
       </folder>
+      <folder name="driver">
+        <folder name="button">
+          <folder name="src">
+            <file name="sl_button.c" linked="false" uri="studio:/sdk/platform/driver/button/src/sl_button.c"/>
+            <file name="sl_simple_button.c" linked="false" uri="studio:/sdk/platform/driver/button/src/sl_simple_button.c"/>
+          </folder>
+          <folder name="inc">
+            <file name="sl_button.h" linked="false" uri="studio:/sdk/platform/driver/button/inc/sl_button.h"/>
+            <file name="sl_simple_button.h" linked="false" uri="studio:/sdk/platform/driver/button/inc/sl_simple_button.h"/>
+          </folder>
+        </folder>
+      </folder>
       <folder name="CMSIS">
         <folder name="Include">
           <file name="arm_common_tables.h" linked="false" uri="studio:/sdk/platform/CMSIS/Include/arm_common_tables.h"/>
@@ -267,6 +279,10 @@
               <file name="pa_conversions_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_conversions_efr32.h"/>
               <file name="pa_curve_types_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h"/>
               <file name="pa_curves_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h"/>
+            </folder>
+            <folder name="rail_util_pti">
+              <file name="sl_rail_util_pti.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_pti/sl_rail_util_pti.c"/>
+              <file name="sl_rail_util_pti.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_pti/sl_rail_util_pti.h"/>
             </folder>
             <folder name="rail_util_rf_path">
               <file name="sl_rail_util_rf_path.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_rf_path/sl_rail_util_rf_path.c"/>
@@ -579,15 +595,15 @@
       </folder>
     </folder>
   </folder>
-  <file name="app.c" linked="false" uri="studio:/sdk/app/bluetooth/example/rcp/app.c"/>
-  <file name="main.c" linked="false" uri="studio:/sdk/app/bluetooth/example/rcp/main.c"/>
-  <file name="app.h" linked="false" uri="studio:/sdk/app/bluetooth/example/rcp/app.h"/>
-  <file name="readme_img0.png" linked="false" uri="studio:/sdk/app/bluetooth/documentation/example/rcp/readme_img0.png"/>
-  <file name="readme_img1.png" linked="false" uri="studio:/sdk/app/bluetooth/documentation/example/rcp/readme_img1.png"/>
-  <file name="readme_img2.png" linked="false" uri="studio:/sdk/app/bluetooth/documentation/example/rcp/readme_img2.png"/>
-  <file name="readme_img3.png" linked="false" uri="studio:/sdk/app/bluetooth/documentation/example/rcp/readme_img3.png"/>
-  <file name="readme_img4.png" linked="false" uri="studio:/sdk/app/bluetooth/documentation/example/rcp/readme_img4.png"/>
-  <file name="readme.md" linked="false" uri="studio:/sdk/app/bluetooth/documentation/example/rcp/readme.md"/>
+  <file name="app.c" linked="false" uri="studio:/project/app.c"/>
+  <file name="main.c" linked="false" uri="studio:/project/main.c"/>
+  <file name="app.h" linked="false" uri="studio:/project/app.h"/>
+  <file name="readme_img0.png" linked="false" uri="studio:/project/readme_img0.png"/>
+  <file name="readme_img1.png" linked="false" uri="studio:/project/readme_img1.png"/>
+  <file name="readme_img2.png" linked="false" uri="studio:/project/readme_img2.png"/>
+  <file name="readme_img3.png" linked="false" uri="studio:/project/readme_img3.png"/>
+  <file name="readme_img4.png" linked="false" uri="studio:/project/readme_img4.png"/>
+  <file name="readme.md" linked="false" uri="studio:/project/readme.md"/>
   <includePath uri="studio:/project/"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/Device/SiliconLabs/EFR32MG21/Include"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/protocol/bluetooth/bgcommon/include"/>
@@ -599,6 +615,7 @@
   <includePath uri="studio:/project/gecko_sdk_4.0.2/hardware/board/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/bootloader"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/bootloader/api"/>
+  <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/driver/button/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/CMSIS/Include"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/service/device_init/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/emdrv/dmadrv/inc"/>
@@ -619,6 +636,7 @@
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/radio/rail_lib/chip/efr32/efr32xg2x"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/pa-conversions"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/pa-conversions/efr32xg21"/>
+  <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/rail_util_pti"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/platform/radio/rail_lib/plugin/rail_util_rf_path"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.0.2/util/third_party/crypto/sl_component/se_manager/src"/>
