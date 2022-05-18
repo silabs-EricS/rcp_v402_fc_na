@@ -200,10 +200,16 @@ void sl_btctrl_hci_packet_read(void)
               if(PACKET->hci_cmd.param_len == sizeof(hci_host_completed_t)) //Prevent the overflow
                 memcpy(&host_completed, PACKET->hci_cmd.payload, PACKET->hci_cmd.param_len);
 
-              acl_packet_support_counter += host_completed.completed_packet[0];
+              //for(uint8_t i = 0; i < host_completed.handle_num; i++)
+              {
+                acl_packet_support_counter += host_completed.count[0];
+              }
               if(acl_packet_support_counter > host_buffer.acl_pkts)
                 acl_packet_support_counter = host_buffer.acl_pkts;
-              break;
+
+              hci_common_transport_receive(NULL, 0, false);
+              reset();
+              return;
             }
             default:
               break;
@@ -242,6 +248,7 @@ uint32_t hci_common_transport_transmit(uint8_t *data, int16_t len)
   if (transmit_data.packet_type == hci_packet_type_event) {
     if (transmit_data.hci_evt.eventcode == HCI_Disconnection_Complete) {
       acl_packet_support_counter = 0;
+      sl_set_rx_enable(true); //enable it for next round
     }
 
     if(transmit_data.hci_evt.eventcode == HCI_Command_Complete){
@@ -249,7 +256,7 @@ uint32_t hci_common_transport_transmit(uint8_t *data, int16_t len)
         transmit_data.hci_evt.payload[hci_flow_control_config_index] |= 0xE0;  //Set bit5,6,7
       }else if((transmit_data.hci_evt.opcode == HCI_Set_Host_Controller_To_Host_Flow_Control)
              ||(transmit_data.hci_evt.opcode == HCI_Host_Buffer_Size)
-             ||(transmit_data.hci_evt.opcode == HCI_Host_Number_Of_Completed_Packets)){
+             /*||(transmit_data.hci_evt.opcode == HCI_Host_Number_Of_Completed_Packets)*/){
         transmit_data.hci_evt.status = 0x00; //Reply the host that controller support flow control
       }
       memcpy(data, &transmit_data, len);

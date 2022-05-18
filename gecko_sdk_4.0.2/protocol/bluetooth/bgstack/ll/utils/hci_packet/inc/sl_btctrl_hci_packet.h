@@ -7,6 +7,7 @@
 #define hci_acl_data_header_size      4   // handle (2 bytes), length (2 bytes)
 #define hci_flow_control_config_index 10
 #define hci_max_payload_size          256
+#define hci_max_support_connection    6 
 
 #define ENABLE_HCI_CONTROLLER_TO_HOST_FLOW_CONTROL
 
@@ -80,9 +81,9 @@ SL_PACK_END()
 
 SL_PACK_START(1)
 typedef struct {
-  uint8_t  handle;
-  uint16_t connection[1];
-  uint16_t completed_packet[1];
+  uint8_t  handle_num;
+  uint16_t connection_handle[1];
+  uint16_t count[1];
 } SL_ATTRIBUTE_PACKED hci_host_completed_t;
 SL_PACK_END()
 
