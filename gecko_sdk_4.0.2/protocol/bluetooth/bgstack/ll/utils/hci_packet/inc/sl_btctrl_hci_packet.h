@@ -7,7 +7,6 @@
 #define hci_acl_data_header_size      4   // handle (2 bytes), length (2 bytes)
 #define hci_flow_control_config_index 10
 #define hci_max_payload_size          256
-#define hci_max_support_connection    6 
 
 #define ENABLE_HCI_CONTROLLER_TO_HOST_FLOW_CONTROL
 

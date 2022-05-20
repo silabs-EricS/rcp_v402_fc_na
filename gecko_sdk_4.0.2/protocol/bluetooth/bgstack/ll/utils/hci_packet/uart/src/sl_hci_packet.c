@@ -200,9 +200,8 @@ void sl_btctrl_hci_packet_read(void)
               if(PACKET->hci_cmd.param_len == sizeof(hci_host_completed_t)) //Prevent the overflow
                 memcpy(&host_completed, PACKET->hci_cmd.payload, PACKET->hci_cmd.param_len);
 
-              //for(uint8_t i = 0; i < host_completed.handle_num; i++)
-              {
-                acl_packet_support_counter += host_completed.count[0];
+              for(uint8_t i = 0; i < host_completed.handle_num; i++){
+                acl_packet_support_counter += host_completed.count[i];
               }
               if(acl_packet_support_counter > host_buffer.acl_pkts)
                 acl_packet_support_counter = host_buffer.acl_pkts;
