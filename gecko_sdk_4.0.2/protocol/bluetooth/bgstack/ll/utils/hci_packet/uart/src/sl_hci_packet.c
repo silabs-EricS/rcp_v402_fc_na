@@ -246,7 +246,10 @@ uint32_t hci_common_transport_transmit(uint8_t *data, int16_t len)
   memcpy(&transmit_data, data, len);
   if (transmit_data.packet_type == hci_packet_type_event) {
     if (transmit_data.hci_evt.eventcode == HCI_Disconnection_Complete) {
-      acl_packet_support_counter = 0;
+      //While disconnect, regard all buffer in host side as release state.
+      //In multiple connection use case, all connection share same host buffer(packet count).
+      //Only one connection drop then regard all buffer in host side as release state, this should be a risk.
+      acl_packet_support_counter = host_buffer.acl_pkts;
       sl_set_rx_enable(true); //enable it for next round
     }
 
